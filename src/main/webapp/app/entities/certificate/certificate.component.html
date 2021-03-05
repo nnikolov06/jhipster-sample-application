@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.certificate.home.title">Certificates</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-certificate" [routerLink]="['/certificate/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.certificate.home.createLabel">
+            Create a new Certificate
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="certificates?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.certificate.home.notFound">No certificates found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="certificates && certificates.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerNumber">Cer Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerDate">Cer Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSysDate">Cer Sys Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCreatedBy">Cer Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerFileName">Cer File Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerServiceApplicant">Cer Service Applicant</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSigningPerson">Cer Signing Person</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSigningPersonPosition">Cer Signing Person Position</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCertificateType">Cer Certificate Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCheckBoxValues">Cer Check Box Values</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerRequestNumber">Cer Request Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerRequestDate">Cer Request Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerIsDeactivated">Cer Is Deactivated</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerState">Cer State</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerHasObligation">Cer Has Obligation</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerDocumentState">Cer Document State</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.certificate.rezmaEntity">Rezma Entity</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let certificate of certificates ;trackBy: trackId">
+                    <td><a [routerLink]="['/certificate', certificate.id, 'view']">{{ certificate.id }}</a></td>
+                    <td>{{ certificate.cerNumber }}</td>
+                    <td>{{ certificate.cerDate }}</td>
+                    <td>{{ certificate.cerSysDate | date:'medium' }}</td>
+                    <td>{{ certificate.cerCreatedBy }}</td>
+                    <td>{{ certificate.cerFileName }}</td>
+                    <td>{{ certificate.cerServiceApplicant }}</td>
+                    <td>{{ certificate.cerSigningPerson }}</td>
+                    <td>{{ certificate.cerSigningPersonPosition }}</td>
+                    <td>{{ certificate.cerCertificateType }}</td>
+                    <td>{{ certificate.cerCheckBoxValues }}</td>
+                    <td>{{ certificate.cerRequestNumber }}</td>
+                    <td>{{ certificate.cerRequestDate | date:'mediumDate' }}</td>
+                    <td>{{ certificate.cerIsDeactivated }}</td>
+                    <td>{{ certificate.cerState }}</td>
+                    <td>{{ certificate.cerHasObligation }}</td>
+                    <td>{{ certificate.cerDocumentState }}</td>
+                    <td>
+                        <div *ngIf="certificate.rezmaEntity">
+                            <a [routerLink]="['/rezma-entity', certificate.rezmaEntity?.id, 'view']" >{{ certificate.rezmaEntity?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/certificate', certificate.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/certificate', certificate.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(certificate)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+{
+  "name": "Document",
+  "fields": [
+    {
+      "fieldName": "docNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "docDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docSysDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "docCreatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docMrn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docLastChangeDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "docIntoForce",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "docDeferred",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "docRescheduled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "docIntoForceDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "docDeferredDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "docRescheduledDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210305115441",
+  "entityTableName": "document",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

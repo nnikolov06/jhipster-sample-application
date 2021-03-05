@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="inspection">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.inspection.detail.title">Inspection</span> {{ inspection.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insNumber">Ins Number</span></dt>
+                <dd>
+                    <span>{{ inspection.insNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insDate">Ins Date</span></dt>
+                <dd>
+                    <span>{{ inspection.insDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insCustomsOffice">Ins Customs Office</span></dt>
+                <dd>
+                    <span>{{ inspection.insCustomsOffice }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insUser">Ins User</span></dt>
+                <dd>
+                    <span>{{ inspection.insUser }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insSysDate">Ins Sys Date</span></dt>
+                <dd>
+                    <span>{{ inspection.insSysDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insType">Ins Type</span></dt>
+                <dd>
+                    <span>{{ inspection.insType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.inspection.rezmaEntity">Rezma Entity</span></dt>
+                <dd>
+                    <span *ngFor="let rezmaEntity of inspection.rezmaEntities; let last = last">
+                        <a [routerLink]="['/rezma-entity', rezmaEntity?.id, 'view']">{{ rezmaEntity.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/inspection', inspection.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

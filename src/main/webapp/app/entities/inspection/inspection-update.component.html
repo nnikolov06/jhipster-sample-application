@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-inspection-heading" jhiTranslate="jhipsterSampleApplicationApp.inspection.home.createOrEditLabel">Create or edit a Inspection</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.inspection.insNumber" for="field_insNumber">Ins Number</label>
+                    <input type="text" class="form-control" name="insNumber" id="field_insNumber"
+                           formControlName="insNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.inspection.insDate" for="field_insDate">Ins Date</label>
+                    <div class="d-flex">
+                        <input id="field_insDate" type="datetime-local" class="form-control" name="insDate" formControlName="insDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.inspection.insCustomsOffice" for="field_insCustomsOffice">Ins Customs Office</label>
+                    <input type="text" class="form-control" name="insCustomsOffice" id="field_insCustomsOffice"
+                           formControlName="insCustomsOffice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.inspection.insUser" for="field_insUser">Ins User</label>
+                    <input type="text" class="form-control" name="insUser" id="field_insUser"
+                           formControlName="insUser"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.inspection.insSysDate" for="field_insSysDate">Ins Sys Date</label>
+                    <div class="d-flex">
+                        <input id="field_insSysDate" type="datetime-local" class="form-control" name="insSysDate" formControlName="insSysDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.inspection.insType" for="field_insType">Ins Type</label>
+                    <input type="text" class="form-control" name="insType" id="field_insType"
+                           formControlName="insType"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="jhipsterSampleApplicationApp.inspection.rezmaEntity" for="field_rezmaEntities">Rezma Entity</label>
+                    <select class="form-control" id="field_rezmaEntities" multiple name="rezmaEntities" formControlName="rezmaEntities">
+                        <option [ngValue]="getSelected(editForm.get('rezmaEntities')!.value, rezmaEntityOption)" *ngFor="let rezmaEntityOption of rezmaentities; trackBy: trackById">{{ rezmaEntityOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

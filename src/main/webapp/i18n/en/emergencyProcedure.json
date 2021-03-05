@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "emergencyProcedure": {
+      "home": {
+        "title": "Emergency Procedures",
+        "createLabel": "Create a new Emergency Procedure",
+        "createOrEditLabel": "Create or edit a Emergency Procedure",
+        "notFound": "No Emergency Procedures found"
+      },
+      "created": "A new Emergency Procedure is created with identifier {{ param }}",
+      "updated": "A Emergency Procedure is updated with identifier {{ param }}",
+      "deleted": "A Emergency Procedure is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Emergency Procedure {{ id }}?"
+      },
+      "detail": {
+        "title": "Emergency Procedure"
+      },
+      "empSystem": "Emp System",
+      "empReason": "Emp Reason",
+      "empUser": "Emp User",
+      "empIsActive": "Emp Is Active",
+      "empDateStart": "Emp Date Start",
+      "empDateEnd": "Emp Date End"
+    }
+  }
+}

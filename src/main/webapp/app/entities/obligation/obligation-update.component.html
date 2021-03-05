@@ -1,0 +1,127 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-obligation-heading" jhiTranslate="jhipsterSampleApplicationApp.obligation.home.createOrEditLabel">Create or edit a Obligation</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblSysDate" for="field_oblSysDate">Obl Sys Date</label>
+                    <div class="d-flex">
+                        <input id="field_oblSysDate" type="datetime-local" class="form-control" name="oblSysDate" formControlName="oblSysDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCreatedBy" for="field_oblCreatedBy">Obl Created By</label>
+                    <input type="text" class="form-control" name="oblCreatedBy" id="field_oblCreatedBy"
+                           formControlName="oblCreatedBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCustomsOffice" for="field_oblCustomsOffice">Obl Customs Office</label>
+                    <input type="text" class="form-control" name="oblCustomsOffice" id="field_oblCustomsOffice"
+                           formControlName="oblCustomsOffice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblType" for="field_oblType">Obl Type</label>
+                    <input type="text" class="form-control" name="oblType" id="field_oblType"
+                           formControlName="oblType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblAmount" for="field_oblAmount">Obl Amount</label>
+                    <input type="number" class="form-control" name="oblAmount" id="field_oblAmount"
+                           formControlName="oblAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblLapsed" for="field_oblLapsed">Obl Lapsed</label>
+                    <input type="checkbox" class="form-control" name="oblLapsed" id="field_oblLapsed"
+                           formControlName="oblLapsed"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblVpoNumber" for="field_oblVpoNumber">Obl Vpo Number</label>
+                    <input type="text" class="form-control" name="oblVpoNumber" id="field_oblVpoNumber"
+                           formControlName="oblVpoNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblTransactionNumber" for="field_oblTransactionNumber">Obl Transaction Number</label>
+                    <input type="text" class="form-control" name="oblTransactionNumber" id="field_oblTransactionNumber"
+                           formControlName="oblTransactionNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblMraDate" for="field_oblMraDate">Obl Mra Date</label>
+                    <div class="d-flex">
+                        <input id="field_oblMraDate" type="datetime-local" class="form-control" name="oblMraDate" formControlName="oblMraDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblState" for="field_oblState">Obl State</label>
+                    <input type="text" class="form-control" name="oblState" id="field_oblState"
+                           formControlName="oblState"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblIdentifier" for="field_oblIdentifier">Obl Identifier</label>
+                    <input type="text" class="form-control" name="oblIdentifier" id="field_oblIdentifier"
+                           formControlName="oblIdentifier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblAmountDifference" for="field_oblAmountDifference">Obl Amount Difference</label>
+                    <input type="number" class="form-control" name="oblAmountDifference" id="field_oblAmountDifference"
+                           formControlName="oblAmountDifference"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblGuarantyDifference" for="field_oblGuarantyDifference">Obl Guaranty Difference</label>
+                    <input type="number" class="form-control" name="oblGuarantyDifference" id="field_oblGuarantyDifference"
+                           formControlName="oblGuarantyDifference"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCustomsOfficeName" for="field_oblCustomsOfficeName">Obl Customs Office Name</label>
+                    <input type="text" class="form-control" name="oblCustomsOfficeName" id="field_oblCustomsOfficeName"
+                           formControlName="oblCustomsOfficeName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.obligation.document" for="field_document">Document</label>
+                    <select class="form-control" id="field_document" name="document" formControlName="document">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="documentOption.id === editForm.get('document')!.value?.id ? editForm.get('document')!.value : documentOption" *ngFor="let documentOption of documents; trackBy: trackById">{{ documentOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="jhipsterSampleApplicationApp.obligation.rezmaEntity" for="field_rezmaEntities">Rezma Entity</label>
+                    <select class="form-control" id="field_rezmaEntities" multiple name="rezmaEntities" formControlName="rezmaEntities">
+                        <option [ngValue]="getSelected(editForm.get('rezmaEntities')!.value, rezmaEntityOption)" *ngFor="let rezmaEntityOption of rezmaentities; trackBy: trackById">{{ rezmaEntityOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.inspection.home.title">Inspections</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-inspection" [routerLink]="['/inspection/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.inspection.home.createLabel">
+            Create a new Inspection
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="inspections?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.inspection.home.notFound">No inspections found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="inspections && inspections.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insNumber">Ins Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insDate">Ins Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insCustomsOffice">Ins Customs Office</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insUser">Ins User</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insSysDate">Ins Sys Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.inspection.insType">Ins Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.inspection.rezmaEntity">Rezma Entity</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let inspection of inspections ;trackBy: trackId">
+                    <td><a [routerLink]="['/inspection', inspection.id, 'view']">{{ inspection.id }}</a></td>
+                    <td>{{ inspection.insNumber }}</td>
+                    <td>{{ inspection.insDate | date:'medium' }}</td>
+                    <td>{{ inspection.insCustomsOffice }}</td>
+                    <td>{{ inspection.insUser }}</td>
+                    <td>{{ inspection.insSysDate | date:'medium' }}</td>
+                    <td>{{ inspection.insType }}</td>
+                    <td>
+                        <span *ngFor="let rezmaEntity of inspection.rezmaEntities; let last = last">
+                            <a class="form-control-static" [routerLink]="['/rezma-entity', rezmaEntity?.id, 'view']">{{ rezmaEntity.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/inspection', inspection.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/inspection', inspection.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(inspection)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

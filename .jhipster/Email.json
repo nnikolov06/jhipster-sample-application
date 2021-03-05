@@ -1,0 +1,25 @@
+{
+  "name": "Email",
+  "fields": [
+    {
+      "fieldName": "emlValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emlIsActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210305115541",
+  "entityTableName": "email",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

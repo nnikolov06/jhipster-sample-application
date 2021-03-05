@@ -1,0 +1,25 @@
+{
+  "name": "CertificateEmergencyText",
+  "fields": [
+    {
+      "fieldName": "cetText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cetIsActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210305115241",
+  "entityTableName": "certificate_emergency_text",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

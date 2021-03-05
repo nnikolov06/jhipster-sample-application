@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-config-heading" jhiTranslate="jhipsterSampleApplicationApp.config.home.createOrEditLabel">Create or edit a Config</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.config.cfgSection" for="field_cfgSection">Cfg Section</label>
+                    <input type="text" class="form-control" name="cfgSection" id="field_cfgSection"
+                           formControlName="cfgSection"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.config.cfgEnvironmnent" for="field_cfgEnvironmnent">Cfg Environmnent</label>
+                    <input type="text" class="form-control" name="cfgEnvironmnent" id="field_cfgEnvironmnent"
+                           formControlName="cfgEnvironmnent"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.config.cfgItem" for="field_cfgItem">Cfg Item</label>
+                    <input type="text" class="form-control" name="cfgItem" id="field_cfgItem"
+                           formControlName="cfgItem"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.config.cfgValue" for="field_cfgValue">Cfg Value</label>
+                    <input type="text" class="form-control" name="cfgValue" id="field_cfgValue"
+                           formControlName="cfgValue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.config.moduleConfiguration" for="field_moduleConfiguration">Module Configuration</label>
+                    <select class="form-control" id="field_moduleConfiguration" name="moduleConfiguration" formControlName="moduleConfiguration">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="moduleConfigurationOption.id === editForm.get('moduleConfiguration')!.value?.id ? editForm.get('moduleConfiguration')!.value : moduleConfigurationOption" *ngFor="let moduleConfigurationOption of moduleconfigurations; trackBy: trackById">{{ moduleConfigurationOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

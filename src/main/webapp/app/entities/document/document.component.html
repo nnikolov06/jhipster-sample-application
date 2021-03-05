@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.document.home.title">Documents</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-document" [routerLink]="['/document/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.document.home.createLabel">
+            Create a new Document
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="documents?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.document.home.notFound">No documents found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="documents && documents.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docNumber">Doc Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docDate">Doc Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docDescription">Doc Description</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docType">Doc Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docSysDate">Doc Sys Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docCreatedBy">Doc Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docMrn">Doc Mrn</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docStatus">Doc Status</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docLastChangeDate">Doc Last Change Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docIntoForce">Doc Into Force</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docDeferred">Doc Deferred</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docRescheduled">Doc Rescheduled</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docIntoForceDate">Doc Into Force Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docDeferredDate">Doc Deferred Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.document.docRescheduledDate">Doc Rescheduled Date</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let document of documents ;trackBy: trackId">
+                    <td><a [routerLink]="['/document', document.id, 'view']">{{ document.id }}</a></td>
+                    <td>{{ document.docNumber }}</td>
+                    <td>{{ document.docDate | date:'mediumDate' }}</td>
+                    <td>{{ document.docDescription }}</td>
+                    <td>{{ document.docType }}</td>
+                    <td>{{ document.docSysDate | date:'medium' }}</td>
+                    <td>{{ document.docCreatedBy }}</td>
+                    <td>{{ document.docMrn }}</td>
+                    <td>{{ document.docStatus }}</td>
+                    <td>{{ document.docLastChangeDate | date:'medium' }}</td>
+                    <td>{{ document.docIntoForce }}</td>
+                    <td>{{ document.docDeferred }}</td>
+                    <td>{{ document.docRescheduled }}</td>
+                    <td>{{ document.docIntoForceDate | date:'mediumDate' }}</td>
+                    <td>{{ document.docDeferredDate | date:'mediumDate' }}</td>
+                    <td>{{ document.docRescheduledDate | date:'mediumDate' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/document', document.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/document', document.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(document)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="obligation">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.obligation.detail.title">Obligation</span> {{ obligation.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblSysDate">Obl Sys Date</span></dt>
+                <dd>
+                    <span>{{ obligation.oblSysDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCreatedBy">Obl Created By</span></dt>
+                <dd>
+                    <span>{{ obligation.oblCreatedBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCustomsOffice">Obl Customs Office</span></dt>
+                <dd>
+                    <span>{{ obligation.oblCustomsOffice }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblType">Obl Type</span></dt>
+                <dd>
+                    <span>{{ obligation.oblType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblAmount">Obl Amount</span></dt>
+                <dd>
+                    <span>{{ obligation.oblAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblLapsed">Obl Lapsed</span></dt>
+                <dd>
+                    <span>{{ obligation.oblLapsed }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblVpoNumber">Obl Vpo Number</span></dt>
+                <dd>
+                    <span>{{ obligation.oblVpoNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblTransactionNumber">Obl Transaction Number</span></dt>
+                <dd>
+                    <span>{{ obligation.oblTransactionNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblMraDate">Obl Mra Date</span></dt>
+                <dd>
+                    <span>{{ obligation.oblMraDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblState">Obl State</span></dt>
+                <dd>
+                    <span>{{ obligation.oblState }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblIdentifier">Obl Identifier</span></dt>
+                <dd>
+                    <span>{{ obligation.oblIdentifier }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblAmountDifference">Obl Amount Difference</span></dt>
+                <dd>
+                    <span>{{ obligation.oblAmountDifference }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblGuarantyDifference">Obl Guaranty Difference</span></dt>
+                <dd>
+                    <span>{{ obligation.oblGuarantyDifference }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCustomsOfficeName">Obl Customs Office Name</span></dt>
+                <dd>
+                    <span>{{ obligation.oblCustomsOfficeName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.document">Document</span></dt>
+                <dd>
+                    <div *ngIf="obligation.document">
+                        <a [routerLink]="['/document', obligation.document?.id, 'view']">{{ obligation.document?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.obligation.rezmaEntity">Rezma Entity</span></dt>
+                <dd>
+                    <span *ngFor="let rezmaEntity of obligation.rezmaEntities; let last = last">
+                        <a [routerLink]="['/rezma-entity', rezmaEntity?.id, 'view']">{{ rezmaEntity.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/obligation', obligation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
