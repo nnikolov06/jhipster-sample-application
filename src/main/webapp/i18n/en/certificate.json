@@ -1,0 +1,38 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "certificate": {
+      "home": {
+        "title": "Certificates",
+        "createLabel": "Create a new Certificate",
+        "createOrEditLabel": "Create or edit a Certificate",
+        "notFound": "No Certificates found"
+      },
+      "created": "A new Certificate is created with identifier {{ param }}",
+      "updated": "A Certificate is updated with identifier {{ param }}",
+      "deleted": "A Certificate is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Certificate {{ id }}?"
+      },
+      "detail": {
+        "title": "Certificate"
+      },
+      "cerNumber": "Cer Number",
+      "cerDate": "Cer Date",
+      "cerSysDate": "Cer Sys Date",
+      "cerCreatedBy": "Cer Created By",
+      "cerFileName": "Cer File Name",
+      "cerServiceApplicant": "Cer Service Applicant",
+      "cerSigningPerson": "Cer Signing Person",
+      "cerSigningPersonPosition": "Cer Signing Person Position",
+      "cerCertificateType": "Cer Certificate Type",
+      "cerCheckBoxValues": "Cer Check Box Values",
+      "cerRequestNumber": "Cer Request Number",
+      "cerRequestDate": "Cer Request Date",
+      "cerIsDeactivated": "Cer Is Deactivated",
+      "cerState": "Cer State",
+      "cerHasObligation": "Cer Has Obligation",
+      "cerDocumentState": "Cer Document State",
+      "rezmaEntity": "Rezma Entity"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-certificate-heading" jhiTranslate="jhipsterSampleApplicationApp.certificate.home.createOrEditLabel">Create or edit a Certificate</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerNumber" for="field_cerNumber">Cer Number</label>
+                    <input type="text" class="form-control" name="cerNumber" id="field_cerNumber"
+                           formControlName="cerNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerDate" for="field_cerDate">Cer Date</label>
+                    <input type="text" class="form-control" name="cerDate" id="field_cerDate"
+                           formControlName="cerDate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSysDate" for="field_cerSysDate">Cer Sys Date</label>
+                    <div class="d-flex">
+                        <input id="field_cerSysDate" type="datetime-local" class="form-control" name="cerSysDate" formControlName="cerSysDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCreatedBy" for="field_cerCreatedBy">Cer Created By</label>
+                    <input type="text" class="form-control" name="cerCreatedBy" id="field_cerCreatedBy"
+                           formControlName="cerCreatedBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerFileName" for="field_cerFileName">Cer File Name</label>
+                    <input type="text" class="form-control" name="cerFileName" id="field_cerFileName"
+                           formControlName="cerFileName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerServiceApplicant" for="field_cerServiceApplicant">Cer Service Applicant</label>
+                    <input type="text" class="form-control" name="cerServiceApplicant" id="field_cerServiceApplicant"
+                           formControlName="cerServiceApplicant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSigningPerson" for="field_cerSigningPerson">Cer Signing Person</label>
+                    <input type="text" class="form-control" name="cerSigningPerson" id="field_cerSigningPerson"
+                           formControlName="cerSigningPerson"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSigningPersonPosition" for="field_cerSigningPersonPosition">Cer Signing Person Position</label>
+                    <input type="text" class="form-control" name="cerSigningPersonPosition" id="field_cerSigningPersonPosition"
+                           formControlName="cerSigningPersonPosition"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCertificateType" for="field_cerCertificateType">Cer Certificate Type</label>
+                    <input type="text" class="form-control" name="cerCertificateType" id="field_cerCertificateType"
+                           formControlName="cerCertificateType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCheckBoxValues" for="field_cerCheckBoxValues">Cer Check Box Values</label>
+                    <input type="text" class="form-control" name="cerCheckBoxValues" id="field_cerCheckBoxValues"
+                           formControlName="cerCheckBoxValues"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerRequestNumber" for="field_cerRequestNumber">Cer Request Number</label>
+                    <input type="text" class="form-control" name="cerRequestNumber" id="field_cerRequestNumber"
+                           formControlName="cerRequestNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerRequestDate" for="field_cerRequestDate">Cer Request Date</label>
+                    <div class="input-group">
+                        <input id="field_cerRequestDate" type="text" class="form-control" name="cerRequestDate" ngbDatepicker #cerRequestDateDp="ngbDatepicker" formControlName="cerRequestDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="cerRequestDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerIsDeactivated" for="field_cerIsDeactivated">Cer Is Deactivated</label>
+                    <input type="checkbox" class="form-control" name="cerIsDeactivated" id="field_cerIsDeactivated"
+                           formControlName="cerIsDeactivated"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerState" for="field_cerState">Cer State</label>
+                    <input type="text" class="form-control" name="cerState" id="field_cerState"
+                           formControlName="cerState"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerHasObligation" for="field_cerHasObligation">Cer Has Obligation</label>
+                    <input type="checkbox" class="form-control" name="cerHasObligation" id="field_cerHasObligation"
+                           formControlName="cerHasObligation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.cerDocumentState" for="field_cerDocumentState">Cer Document State</label>
+                    <input type="text" class="form-control" name="cerDocumentState" id="field_cerDocumentState"
+                           formControlName="cerDocumentState"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.certificate.rezmaEntity" for="field_rezmaEntity">Rezma Entity</label>
+                    <select class="form-control" id="field_rezmaEntity" name="rezmaEntity" formControlName="rezmaEntity">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="rezmaEntityOption.id === editForm.get('rezmaEntity')!.value?.id ? editForm.get('rezmaEntity')!.value : rezmaEntityOption" *ngFor="let rezmaEntityOption of rezmaentities; trackBy: trackById">{{ rezmaEntityOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+{
+  "name": "Config",
+  "fields": [
+    {
+      "fieldName": "cfgSection",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cfgEnvironmnent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cfgItem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cfgValue",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "moduleConfiguration",
+      "otherEntityRelationshipName": "config",
+      "relationshipName": "moduleConfiguration",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210305115527",
+  "entityTableName": "config",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

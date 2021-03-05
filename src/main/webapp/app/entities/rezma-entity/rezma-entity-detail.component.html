@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rezmaEntity">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.detail.title">Rezma Entity</span> {{ rezmaEntity.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entName">Ent Name</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entAddress">Ent Address</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entAddress }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entSystemDate">Ent System Date</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entSystemDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entCreatedBy">Ent Created By</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entCreatedBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entIdentifier">Ent Identifier</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entIdentifier }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entType">Ent Type</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entCountry">Ent Country</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entCountry }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entIdentifierType">Ent Identifier Type</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entIdentifierType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entTin">Ent Tin</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entTin }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entDOB">Ent DOB</span></dt>
+                <dd>
+                    <span>{{ rezmaEntity.entDOB }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rezma-entity', rezmaEntity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

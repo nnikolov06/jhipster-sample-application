@@ -1,0 +1,50 @@
+{
+  "name": "Inspection",
+  "fields": [
+    {
+      "fieldName": "insNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "insCustomsOffice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insSysDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "insType",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "rezmaEntity",
+      "otherEntityRelationshipName": "inspection",
+      "relationshipName": "rezmaEntity",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210305120027",
+  "entityTableName": "inspection",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

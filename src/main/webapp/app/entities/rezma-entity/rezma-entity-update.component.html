@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-rezma-entity-heading" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.home.createOrEditLabel">Create or edit a Rezma Entity</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entName" for="field_entName">Ent Name</label>
+                    <input type="text" class="form-control" name="entName" id="field_entName"
+                           formControlName="entName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entAddress" for="field_entAddress">Ent Address</label>
+                    <input type="text" class="form-control" name="entAddress" id="field_entAddress"
+                           formControlName="entAddress"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entSystemDate" for="field_entSystemDate">Ent System Date</label>
+                    <div class="d-flex">
+                        <input id="field_entSystemDate" type="datetime-local" class="form-control" name="entSystemDate" formControlName="entSystemDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entCreatedBy" for="field_entCreatedBy">Ent Created By</label>
+                    <input type="text" class="form-control" name="entCreatedBy" id="field_entCreatedBy"
+                           formControlName="entCreatedBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entIdentifier" for="field_entIdentifier">Ent Identifier</label>
+                    <input type="text" class="form-control" name="entIdentifier" id="field_entIdentifier"
+                           formControlName="entIdentifier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entType" for="field_entType">Ent Type</label>
+                    <input type="text" class="form-control" name="entType" id="field_entType"
+                           formControlName="entType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entCountry" for="field_entCountry">Ent Country</label>
+                    <input type="text" class="form-control" name="entCountry" id="field_entCountry"
+                           formControlName="entCountry"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entIdentifierType" for="field_entIdentifierType">Ent Identifier Type</label>
+                    <input type="text" class="form-control" name="entIdentifierType" id="field_entIdentifierType"
+                           formControlName="entIdentifierType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entTin" for="field_entTin">Ent Tin</label>
+                    <input type="text" class="form-control" name="entTin" id="field_entTin"
+                           formControlName="entTin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.rezmaEntity.entDOB" for="field_entDOB">Ent DOB</label>
+                    <input type="text" class="form-control" name="entDOB" id="field_entDOB"
+                           formControlName="entDOB"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

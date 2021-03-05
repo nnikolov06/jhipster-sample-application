@@ -1,0 +1,33 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "rezmaEntity": {
+      "home": {
+        "title": "Rezma Entities",
+        "createLabel": "Create a new Rezma Entity",
+        "createOrEditLabel": "Create or edit a Rezma Entity",
+        "notFound": "No Rezma Entities found"
+      },
+      "created": "A new Rezma Entity is created with identifier {{ param }}",
+      "updated": "A Rezma Entity is updated with identifier {{ param }}",
+      "deleted": "A Rezma Entity is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Rezma Entity {{ id }}?"
+      },
+      "detail": {
+        "title": "Rezma Entity"
+      },
+      "entName": "Ent Name",
+      "entAddress": "Ent Address",
+      "entSystemDate": "Ent System Date",
+      "entCreatedBy": "Ent Created By",
+      "entIdentifier": "Ent Identifier",
+      "entType": "Ent Type",
+      "entCountry": "Ent Country",
+      "entIdentifierType": "Ent Identifier Type",
+      "entTin": "Ent Tin",
+      "entDOB": "Ent DOB",
+      "obligation": "Obligation",
+      "inspection": "Inspection"
+    }
+  }
+}

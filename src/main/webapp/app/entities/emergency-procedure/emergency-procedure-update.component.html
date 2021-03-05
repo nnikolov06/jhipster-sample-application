@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-emergency-procedure-heading" jhiTranslate="jhipsterSampleApplicationApp.emergencyProcedure.home.createOrEditLabel">Create or edit a Emergency Procedure</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.emergencyProcedure.empSystem" for="field_empSystem">Emp System</label>
+                    <input type="text" class="form-control" name="empSystem" id="field_empSystem"
+                           formControlName="empSystem"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.emergencyProcedure.empReason" for="field_empReason">Emp Reason</label>
+                    <input type="text" class="form-control" name="empReason" id="field_empReason"
+                           formControlName="empReason"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.emergencyProcedure.empUser" for="field_empUser">Emp User</label>
+                    <input type="text" class="form-control" name="empUser" id="field_empUser"
+                           formControlName="empUser"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.emergencyProcedure.empIsActive" for="field_empIsActive">Emp Is Active</label>
+                    <input type="checkbox" class="form-control" name="empIsActive" id="field_empIsActive"
+                           formControlName="empIsActive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.emergencyProcedure.empDateStart" for="field_empDateStart">Emp Date Start</label>
+                    <div class="d-flex">
+                        <input id="field_empDateStart" type="datetime-local" class="form-control" name="empDateStart" formControlName="empDateStart" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.emergencyProcedure.empDateEnd" for="field_empDateEnd">Emp Date End</label>
+                    <div class="d-flex">
+                        <input id="field_empDateEnd" type="datetime-local" class="form-control" name="empDateEnd" formControlName="empDateEnd" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="email">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.email.detail.title">Email</span> {{ email.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.email.emlValue">Eml Value</span></dt>
+                <dd>
+                    <span>{{ email.emlValue }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.email.emlIsActive">Eml Is Active</span></dt>
+                <dd>
+                    <span>{{ email.emlIsActive }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/email', email.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
