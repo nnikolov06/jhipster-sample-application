@@ -1,0 +1,166 @@
+
+entity Certificate {
+	cerNumber String,
+    cerDate String,
+    cerSysDate Instant,
+    cerCreatedBy String,
+    cerFileName String,
+    cerServiceApplicant String,
+    cerSigningPerson String,
+    cerSigningPersonPosition String,
+    cerCertificateType String,
+    cerCheckBoxValues String,
+    cerRequestNumber String,
+    cerRequestDate LocalDate,
+    cerIsDeactivated Boolean,
+    cerState String,
+    cerHasObligation Boolean,
+    cerDocumentState String
+}
+
+entity CertificateEmergencyText {
+	cetText String,
+    cetIsActive Boolean
+}
+
+entity Config {
+	cfgSection String,
+    cfgEnvironmnent String,
+    cfgItem String,
+    cfgValue String
+}
+
+entity Document {
+    docNumber String,
+    docDate LocalDate,
+    docDescription String,
+    docType String,
+    docSysDate Instant,
+    docCreatedBy String,
+    docMrn String,
+    docStatus String,
+    docLastChangeDate Instant,
+    docIntoForce Boolean,
+    docDeferred Boolean,
+    docRescheduled Boolean,
+    docIntoForceDate LocalDate,
+    docDeferredDate LocalDate,
+    docRescheduledDate LocalDate
+}
+
+entity Email {
+	emlValue String,
+    emlIsActive Boolean
+}
+
+entity EmergencyProcedure {
+    empSystem String,
+    empReason String,
+    empUser String,
+    empIsActive Boolean,
+    empDateStart Instant,
+    empDateEnd Instant
+}
+
+entity RezmaEntity {
+	entName String,
+    entAddress String,
+    entSystemDate Instant,
+    entCreatedBy String,
+    entIdentifier String,
+    entType String,
+    entCountry String,
+    entIdentifierType String,
+    entTin String,
+    entDOB String
+}
+
+entity Inspection {
+	insNumber String,
+    insDate Instant,
+    insCustomsOffice String,
+    insUser String,
+    insSysDate Instant,
+    insType String
+}
+
+entity ModuleConfiguration {
+	mocName String
+}
+
+entity Obligation {
+	oblSysDate Instant,
+    oblCreatedBy String,
+    oblCustomsOffice String,
+    oblType String,
+    oblAmount BigDecimal,
+    oblLapsed Boolean,
+    oblVpoNumber String,
+    oblTransactionNumber String,
+    oblMraDate Instant,
+    oblState String,
+    oblIdentifier String,
+    oblAmountDifference BigDecimal,
+    oblGuarantyDifference BigDecimal,
+    oblCustomsOfficeName String
+}
+
+entity ScheduleLock {
+    slcName String,
+    slcLockUntil Instant,
+    slcLockedAt Instant,
+    slcLockedBy String
+}
+
+entity Transaction {
+    trnNumber String,
+    trnDate Instant,
+    trnSystem String,
+    trnAmount BigDecimal,
+    trnCreationDate Instant,
+    trnSysDate Instant,
+    trnCreatedBy String,
+    trnType String,
+    trnCode String,
+    trnStatus String, 
+    trnDescription String,
+    trnPaymentType String
+}
+
+relationship ManyToMany {
+	Obligation{rezmaEntity} to RezmaEntity{obligation}
+}
+
+relationship ManyToOne {
+	Certificate{rezmaEntity} to RezmaEntity
+}
+
+relationship ManyToOne {
+	Config{moduleConfiguration} to ModuleConfiguration
+}
+
+relationship ManyToOne {
+	Obligation{document} to Document
+}
+
+relationship ManyToOne {
+	Transaction{obligation} to Obligation
+}
+
+relationship ManyToMany {
+	Inspection{rezmaEntity} to RezmaEntity{inspection}
+}
+
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+// paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
