@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.obligation.home.title">Obligations</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-obligation" [routerLink]="['/obligation/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.obligation.home.createLabel">
+            Create a new Obligation
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="obligations?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.obligation.home.notFound">No obligations found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="obligations && obligations.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblSysDate">Obl Sys Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCreatedBy">Obl Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCustomsOffice">Obl Customs Office</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblType">Obl Type</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblAmount">Obl Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblLapsed">Obl Lapsed</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblVpoNumber">Obl Vpo Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblTransactionNumber">Obl Transaction Number</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblMraDate">Obl Mra Date</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblState">Obl State</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblIdentifier">Obl Identifier</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblAmountDifference">Obl Amount Difference</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblGuarantyDifference">Obl Guaranty Difference</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.oblCustomsOfficeName">Obl Customs Office Name</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.document">Document</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.obligation.rezmaEntity">Rezma Entity</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let obligation of obligations ;trackBy: trackId">
+                    <td><a [routerLink]="['/obligation', obligation.id, 'view']">{{ obligation.id }}</a></td>
+                    <td>{{ obligation.oblSysDate | date:'medium' }}</td>
+                    <td>{{ obligation.oblCreatedBy }}</td>
+                    <td>{{ obligation.oblCustomsOffice }}</td>
+                    <td>{{ obligation.oblType }}</td>
+                    <td>{{ obligation.oblAmount }}</td>
+                    <td>{{ obligation.oblLapsed }}</td>
+                    <td>{{ obligation.oblVpoNumber }}</td>
+                    <td>{{ obligation.oblTransactionNumber }}</td>
+                    <td>{{ obligation.oblMraDate | date:'medium' }}</td>
+                    <td>{{ obligation.oblState }}</td>
+                    <td>{{ obligation.oblIdentifier }}</td>
+                    <td>{{ obligation.oblAmountDifference }}</td>
+                    <td>{{ obligation.oblGuarantyDifference }}</td>
+                    <td>{{ obligation.oblCustomsOfficeName }}</td>
+                    <td>
+                        <div *ngIf="obligation.document">
+                            <a [routerLink]="['/document', obligation.document?.id, 'view']" >{{ obligation.document?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <span *ngFor="let rezmaEntity of obligation.rezmaEntities; let last = last">
+                            <a class="form-control-static" [routerLink]="['/rezma-entity', rezmaEntity?.id, 'view']">{{ rezmaEntity.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/obligation', obligation.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/obligation', obligation.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(obligation)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

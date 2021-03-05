@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="certificate">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.certificate.detail.title">Certificate</span> {{ certificate.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerNumber">Cer Number</span></dt>
+                <dd>
+                    <span>{{ certificate.cerNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerDate">Cer Date</span></dt>
+                <dd>
+                    <span>{{ certificate.cerDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSysDate">Cer Sys Date</span></dt>
+                <dd>
+                    <span>{{ certificate.cerSysDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCreatedBy">Cer Created By</span></dt>
+                <dd>
+                    <span>{{ certificate.cerCreatedBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerFileName">Cer File Name</span></dt>
+                <dd>
+                    <span>{{ certificate.cerFileName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerServiceApplicant">Cer Service Applicant</span></dt>
+                <dd>
+                    <span>{{ certificate.cerServiceApplicant }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSigningPerson">Cer Signing Person</span></dt>
+                <dd>
+                    <span>{{ certificate.cerSigningPerson }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerSigningPersonPosition">Cer Signing Person Position</span></dt>
+                <dd>
+                    <span>{{ certificate.cerSigningPersonPosition }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCertificateType">Cer Certificate Type</span></dt>
+                <dd>
+                    <span>{{ certificate.cerCertificateType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerCheckBoxValues">Cer Check Box Values</span></dt>
+                <dd>
+                    <span>{{ certificate.cerCheckBoxValues }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerRequestNumber">Cer Request Number</span></dt>
+                <dd>
+                    <span>{{ certificate.cerRequestNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerRequestDate">Cer Request Date</span></dt>
+                <dd>
+                    <span>{{ certificate.cerRequestDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerIsDeactivated">Cer Is Deactivated</span></dt>
+                <dd>
+                    <span>{{ certificate.cerIsDeactivated }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerState">Cer State</span></dt>
+                <dd>
+                    <span>{{ certificate.cerState }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerHasObligation">Cer Has Obligation</span></dt>
+                <dd>
+                    <span>{{ certificate.cerHasObligation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.cerDocumentState">Cer Document State</span></dt>
+                <dd>
+                    <span>{{ certificate.cerDocumentState }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.certificate.rezmaEntity">Rezma Entity</span></dt>
+                <dd>
+                    <div *ngIf="certificate.rezmaEntity">
+                        <a [routerLink]="['/rezma-entity', certificate.rezmaEntity?.id, 'view']">{{ certificate.rezmaEntity?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/certificate', certificate.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

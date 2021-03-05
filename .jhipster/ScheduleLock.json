@@ -1,0 +1,33 @@
+{
+  "name": "ScheduleLock",
+  "fields": [
+    {
+      "fieldName": "slcName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slcLockUntil",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "slcLockedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "slcLockedBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210305120141",
+  "entityTableName": "schedule_lock",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

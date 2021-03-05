@@ -1,0 +1,134 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-document-heading" jhiTranslate="jhipsterSampleApplicationApp.document.home.createOrEditLabel">Create or edit a Document</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docNumber" for="field_docNumber">Doc Number</label>
+                    <input type="text" class="form-control" name="docNumber" id="field_docNumber"
+                           formControlName="docNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docDate" for="field_docDate">Doc Date</label>
+                    <div class="input-group">
+                        <input id="field_docDate" type="text" class="form-control" name="docDate" ngbDatepicker #docDateDp="ngbDatepicker" formControlName="docDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="docDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docDescription" for="field_docDescription">Doc Description</label>
+                    <input type="text" class="form-control" name="docDescription" id="field_docDescription"
+                           formControlName="docDescription"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docType" for="field_docType">Doc Type</label>
+                    <input type="text" class="form-control" name="docType" id="field_docType"
+                           formControlName="docType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docSysDate" for="field_docSysDate">Doc Sys Date</label>
+                    <div class="d-flex">
+                        <input id="field_docSysDate" type="datetime-local" class="form-control" name="docSysDate" formControlName="docSysDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docCreatedBy" for="field_docCreatedBy">Doc Created By</label>
+                    <input type="text" class="form-control" name="docCreatedBy" id="field_docCreatedBy"
+                           formControlName="docCreatedBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docMrn" for="field_docMrn">Doc Mrn</label>
+                    <input type="text" class="form-control" name="docMrn" id="field_docMrn"
+                           formControlName="docMrn"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docStatus" for="field_docStatus">Doc Status</label>
+                    <input type="text" class="form-control" name="docStatus" id="field_docStatus"
+                           formControlName="docStatus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docLastChangeDate" for="field_docLastChangeDate">Doc Last Change Date</label>
+                    <div class="d-flex">
+                        <input id="field_docLastChangeDate" type="datetime-local" class="form-control" name="docLastChangeDate" formControlName="docLastChangeDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docIntoForce" for="field_docIntoForce">Doc Into Force</label>
+                    <input type="checkbox" class="form-control" name="docIntoForce" id="field_docIntoForce"
+                           formControlName="docIntoForce"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docDeferred" for="field_docDeferred">Doc Deferred</label>
+                    <input type="checkbox" class="form-control" name="docDeferred" id="field_docDeferred"
+                           formControlName="docDeferred"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docRescheduled" for="field_docRescheduled">Doc Rescheduled</label>
+                    <input type="checkbox" class="form-control" name="docRescheduled" id="field_docRescheduled"
+                           formControlName="docRescheduled"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docIntoForceDate" for="field_docIntoForceDate">Doc Into Force Date</label>
+                    <div class="input-group">
+                        <input id="field_docIntoForceDate" type="text" class="form-control" name="docIntoForceDate" ngbDatepicker #docIntoForceDateDp="ngbDatepicker" formControlName="docIntoForceDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="docIntoForceDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docDeferredDate" for="field_docDeferredDate">Doc Deferred Date</label>
+                    <div class="input-group">
+                        <input id="field_docDeferredDate" type="text" class="form-control" name="docDeferredDate" ngbDatepicker #docDeferredDateDp="ngbDatepicker" formControlName="docDeferredDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="docDeferredDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.document.docRescheduledDate" for="field_docRescheduledDate">Doc Rescheduled Date</label>
+                    <div class="input-group">
+                        <input id="field_docRescheduledDate" type="text" class="form-control" name="docRescheduledDate" ngbDatepicker #docRescheduledDateDp="ngbDatepicker" formControlName="docRescheduledDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="docRescheduledDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

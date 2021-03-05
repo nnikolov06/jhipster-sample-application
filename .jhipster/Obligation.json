@@ -1,0 +1,89 @@
+{
+  "name": "Obligation",
+  "fields": [
+    {
+      "fieldName": "oblSysDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "oblCreatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oblCustomsOffice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oblType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oblAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "oblLapsed",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "oblVpoNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oblTransactionNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oblMraDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "oblState",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oblIdentifier",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "oblAmountDifference",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "oblGuarantyDifference",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "oblCustomsOfficeName",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "document",
+      "otherEntityRelationshipName": "obligation",
+      "relationshipName": "document",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "rezmaEntity",
+      "otherEntityRelationshipName": "obligation",
+      "relationshipName": "rezmaEntity",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20210305120041",
+  "entityTableName": "obligation",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

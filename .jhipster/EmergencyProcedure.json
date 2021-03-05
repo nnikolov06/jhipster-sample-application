@@ -1,0 +1,41 @@
+{
+  "name": "EmergencyProcedure",
+  "fields": [
+    {
+      "fieldName": "empSystem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "empReason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "empUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "empIsActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "empDateStart",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "empDateEnd",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210305115641",
+  "entityTableName": "emergency_procedure",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

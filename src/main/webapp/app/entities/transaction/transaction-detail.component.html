@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transaction">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.transaction.detail.title">Transaction</span> {{ transaction.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnNumber">Trn Number</span></dt>
+                <dd>
+                    <span>{{ transaction.trnNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnDate">Trn Date</span></dt>
+                <dd>
+                    <span>{{ transaction.trnDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnSystem">Trn System</span></dt>
+                <dd>
+                    <span>{{ transaction.trnSystem }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnAmount">Trn Amount</span></dt>
+                <dd>
+                    <span>{{ transaction.trnAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnCreationDate">Trn Creation Date</span></dt>
+                <dd>
+                    <span>{{ transaction.trnCreationDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnSysDate">Trn Sys Date</span></dt>
+                <dd>
+                    <span>{{ transaction.trnSysDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnCreatedBy">Trn Created By</span></dt>
+                <dd>
+                    <span>{{ transaction.trnCreatedBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnType">Trn Type</span></dt>
+                <dd>
+                    <span>{{ transaction.trnType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnCode">Trn Code</span></dt>
+                <dd>
+                    <span>{{ transaction.trnCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnStatus">Trn Status</span></dt>
+                <dd>
+                    <span>{{ transaction.trnStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnDescription">Trn Description</span></dt>
+                <dd>
+                    <span>{{ transaction.trnDescription }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.trnPaymentType">Trn Payment Type</span></dt>
+                <dd>
+                    <span>{{ transaction.trnPaymentType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.transaction.obligation">Obligation</span></dt>
+                <dd>
+                    <div *ngIf="transaction.obligation">
+                        <a [routerLink]="['/obligation', transaction.obligation?.id, 'view']">{{ transaction.obligation?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction', transaction.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

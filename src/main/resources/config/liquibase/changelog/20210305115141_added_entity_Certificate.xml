@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Certificate.
+    -->
+    <changeSet id="20210305115141-1" author="jhipster">
+        <createTable tableName="certificate">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="cer_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_date" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_sys_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_file_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_service_applicant" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_signing_person" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_signing_person_position" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_certificate_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_check_box_values" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_request_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_request_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_is_deactivated" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_state" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_has_obligation" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="cer_document_state" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="rezma_entity_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="certificate" columnName="cer_sys_date" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20210305115141-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20210305115141-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/certificate.csv"
+                  separator=";"
+                  tableName="certificate">
+            <column name="id" type="numeric"/>
+            <column name="cer_number" type="string"/>
+            <column name="cer_date" type="string"/>
+            <column name="cer_sys_date" type="datetime"/>
+            <column name="cer_created_by" type="string"/>
+            <column name="cer_file_name" type="string"/>
+            <column name="cer_service_applicant" type="string"/>
+            <column name="cer_signing_person" type="string"/>
+            <column name="cer_signing_person_position" type="string"/>
+            <column name="cer_certificate_type" type="string"/>
+            <column name="cer_check_box_values" type="string"/>
+            <column name="cer_request_number" type="string"/>
+            <column name="cer_request_date" type="date"/>
+            <column name="cer_is_deactivated" type="boolean"/>
+            <column name="cer_state" type="string"/>
+            <column name="cer_has_obligation" type="boolean"/>
+            <column name="cer_document_state" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,73 @@
+{
+  "name": "Transaction",
+  "fields": [
+    {
+      "fieldName": "trnNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trnDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "trnSystem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trnAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "trnCreationDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "trnSysDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "trnCreatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trnType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trnCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trnStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trnDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trnPaymentType",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "obligation",
+      "otherEntityRelationshipName": "transaction",
+      "relationshipName": "obligation",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210305120241",
+  "entityTableName": "transaction",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
