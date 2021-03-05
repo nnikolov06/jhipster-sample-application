@@ -7,6 +7,18 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "certificate": "Certificate",
+        "certificateEmergencyText": "Certificate Emergency Text",
+        "config": "Config",
+        "document": "Document",
+        "email": "Email",
+        "emergencyProcedure": "Emergency Procedure",
+        "rezmaEntity": "Rezma Entity",
+        "inspection": "Inspection",
+        "moduleConfiguration": "Module Configuration",
+        "obligation": "Obligation",
+        "scheduleLock": "Schedule Lock",
+        "transaction": "Transaction",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

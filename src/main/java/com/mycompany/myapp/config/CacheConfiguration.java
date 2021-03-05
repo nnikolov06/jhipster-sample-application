@@ -80,6 +80,22 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName(), jcacheConfiguration);
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName(), jcacheConfiguration);
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Certificate.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.CertificateEmergencyText.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Config.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Document.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Email.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.EmergencyProcedure.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.RezmaEntity.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.RezmaEntity.class.getName() + ".obligations", jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.RezmaEntity.class.getName() + ".inspections", jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Inspection.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Inspection.class.getName() + ".rezmaEntities", jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.ModuleConfiguration.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Obligation.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Obligation.class.getName() + ".rezmaEntities", jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.ScheduleLock.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Transaction.class.getName(), jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }

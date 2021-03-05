@@ -1,0 +1,89 @@
+{
+  "name": "Certificate",
+  "fields": [
+    {
+      "fieldName": "cerNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerSysDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "cerCreatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerFileName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerServiceApplicant",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerSigningPerson",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerSigningPersonPosition",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerCertificateType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerCheckBoxValues",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerRequestNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerRequestDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "cerIsDeactivated",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cerState",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cerHasObligation",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "cerDocumentState",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "rezmaEntity",
+      "otherEntityRelationshipName": "certificate",
+      "relationshipName": "rezmaEntity",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210305115327",
+  "entityTableName": "certificate",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,37 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "obligation": {
+      "home": {
+        "title": "Obligations",
+        "createLabel": "Create a new Obligation",
+        "createOrEditLabel": "Create or edit a Obligation",
+        "notFound": "No Obligations found"
+      },
+      "created": "A new Obligation is created with identifier {{ param }}",
+      "updated": "A Obligation is updated with identifier {{ param }}",
+      "deleted": "A Obligation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Obligation {{ id }}?"
+      },
+      "detail": {
+        "title": "Obligation"
+      },
+      "oblSysDate": "Obl Sys Date",
+      "oblCreatedBy": "Obl Created By",
+      "oblCustomsOffice": "Obl Customs Office",
+      "oblType": "Obl Type",
+      "oblAmount": "Obl Amount",
+      "oblLapsed": "Obl Lapsed",
+      "oblVpoNumber": "Obl Vpo Number",
+      "oblTransactionNumber": "Obl Transaction Number",
+      "oblMraDate": "Obl Mra Date",
+      "oblState": "Obl State",
+      "oblIdentifier": "Obl Identifier",
+      "oblAmountDifference": "Obl Amount Difference",
+      "oblGuarantyDifference": "Obl Guaranty Difference",
+      "oblCustomsOfficeName": "Obl Customs Office Name",
+      "document": "Document",
+      "rezmaEntity": "Rezma Entity"
+    }
+  }
+}

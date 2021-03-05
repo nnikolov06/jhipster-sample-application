@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="document">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.document.detail.title">Document</span> {{ document.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docNumber">Doc Number</span></dt>
+                <dd>
+                    <span>{{ document.docNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docDate">Doc Date</span></dt>
+                <dd>
+                    <span>{{ document.docDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docDescription">Doc Description</span></dt>
+                <dd>
+                    <span>{{ document.docDescription }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docType">Doc Type</span></dt>
+                <dd>
+                    <span>{{ document.docType }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docSysDate">Doc Sys Date</span></dt>
+                <dd>
+                    <span>{{ document.docSysDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docCreatedBy">Doc Created By</span></dt>
+                <dd>
+                    <span>{{ document.docCreatedBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docMrn">Doc Mrn</span></dt>
+                <dd>
+                    <span>{{ document.docMrn }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docStatus">Doc Status</span></dt>
+                <dd>
+                    <span>{{ document.docStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docLastChangeDate">Doc Last Change Date</span></dt>
+                <dd>
+                    <span>{{ document.docLastChangeDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docIntoForce">Doc Into Force</span></dt>
+                <dd>
+                    <span>{{ document.docIntoForce }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docDeferred">Doc Deferred</span></dt>
+                <dd>
+                    <span>{{ document.docDeferred }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docRescheduled">Doc Rescheduled</span></dt>
+                <dd>
+                    <span>{{ document.docRescheduled }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docIntoForceDate">Doc Into Force Date</span></dt>
+                <dd>
+                    <span>{{ document.docIntoForceDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docDeferredDate">Doc Deferred Date</span></dt>
+                <dd>
+                    <span>{{ document.docDeferredDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.document.docRescheduledDate">Doc Rescheduled Date</span></dt>
+                <dd>
+                    <span>{{ document.docRescheduledDate }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/document', document.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

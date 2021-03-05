@@ -1,0 +1,28 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "inspection": {
+      "home": {
+        "title": "Inspections",
+        "createLabel": "Create a new Inspection",
+        "createOrEditLabel": "Create or edit a Inspection",
+        "notFound": "No Inspections found"
+      },
+      "created": "A new Inspection is created with identifier {{ param }}",
+      "updated": "A Inspection is updated with identifier {{ param }}",
+      "deleted": "A Inspection is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Inspection {{ id }}?"
+      },
+      "detail": {
+        "title": "Inspection"
+      },
+      "insNumber": "Ins Number",
+      "insDate": "Ins Date",
+      "insCustomsOffice": "Ins Customs Office",
+      "insUser": "Ins User",
+      "insSysDate": "Ins Sys Date",
+      "insType": "Ins Type",
+      "rezmaEntity": "Rezma Entity"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "certificateEmergencyText": {
+      "home": {
+        "title": "Certificate Emergency Texts",
+        "createLabel": "Create a new Certificate Emergency Text",
+        "createOrEditLabel": "Create or edit a Certificate Emergency Text",
+        "notFound": "No Certificate Emergency Texts found"
+      },
+      "created": "A new Certificate Emergency Text is created with identifier {{ param }}",
+      "updated": "A Certificate Emergency Text is updated with identifier {{ param }}",
+      "deleted": "A Certificate Emergency Text is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Certificate Emergency Text {{ id }}?"
+      },
+      "detail": {
+        "title": "Certificate Emergency Text"
+      },
+      "cetText": "Cet Text",
+      "cetIsActive": "Cet Is Active"
+    }
+  }
+}

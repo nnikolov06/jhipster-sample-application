@@ -1,0 +1,109 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-transaction-heading" jhiTranslate="jhipsterSampleApplicationApp.transaction.home.createOrEditLabel">Create or edit a Transaction</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnNumber" for="field_trnNumber">Trn Number</label>
+                    <input type="text" class="form-control" name="trnNumber" id="field_trnNumber"
+                           formControlName="trnNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnDate" for="field_trnDate">Trn Date</label>
+                    <div class="d-flex">
+                        <input id="field_trnDate" type="datetime-local" class="form-control" name="trnDate" formControlName="trnDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnSystem" for="field_trnSystem">Trn System</label>
+                    <input type="text" class="form-control" name="trnSystem" id="field_trnSystem"
+                           formControlName="trnSystem"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnAmount" for="field_trnAmount">Trn Amount</label>
+                    <input type="number" class="form-control" name="trnAmount" id="field_trnAmount"
+                           formControlName="trnAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnCreationDate" for="field_trnCreationDate">Trn Creation Date</label>
+                    <div class="d-flex">
+                        <input id="field_trnCreationDate" type="datetime-local" class="form-control" name="trnCreationDate" formControlName="trnCreationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnSysDate" for="field_trnSysDate">Trn Sys Date</label>
+                    <div class="d-flex">
+                        <input id="field_trnSysDate" type="datetime-local" class="form-control" name="trnSysDate" formControlName="trnSysDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnCreatedBy" for="field_trnCreatedBy">Trn Created By</label>
+                    <input type="text" class="form-control" name="trnCreatedBy" id="field_trnCreatedBy"
+                           formControlName="trnCreatedBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnType" for="field_trnType">Trn Type</label>
+                    <input type="text" class="form-control" name="trnType" id="field_trnType"
+                           formControlName="trnType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnCode" for="field_trnCode">Trn Code</label>
+                    <input type="text" class="form-control" name="trnCode" id="field_trnCode"
+                           formControlName="trnCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnStatus" for="field_trnStatus">Trn Status</label>
+                    <input type="text" class="form-control" name="trnStatus" id="field_trnStatus"
+                           formControlName="trnStatus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnDescription" for="field_trnDescription">Trn Description</label>
+                    <input type="text" class="form-control" name="trnDescription" id="field_trnDescription"
+                           formControlName="trnDescription"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.trnPaymentType" for="field_trnPaymentType">Trn Payment Type</label>
+                    <input type="text" class="form-control" name="trnPaymentType" id="field_trnPaymentType"
+                           formControlName="trnPaymentType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.transaction.obligation" for="field_obligation">Obligation</label>
+                    <select class="form-control" id="field_obligation" name="obligation" formControlName="obligation">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="obligationOption.id === editForm.get('obligation')!.value?.id ? editForm.get('obligation')!.value : obligationOption" *ngFor="let obligationOption of obligations; trackBy: trackById">{{ obligationOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
